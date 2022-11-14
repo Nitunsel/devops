@@ -27,8 +27,8 @@ CURRENT_IP=$(ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -
 export DEBIAN_FRONTEND=noninteractive
 add-apt-repository universe
 apt update
-apt install -y git unzip apache2 php7.4 curl php7.4-fpm php7.4-curl php7.4-mbstring php7.4-ldap \
-php7.4-tidy php7.4-xml php7.4-zip php7.4-gd php7.4-mysql mysql-server-8.0 libapache2-mod-php7.4
+apt install -y git unzip apache2 php curl php-fpm php-curl php-mbstring php-ldap \
+php-tidy php-xml php-zip php-gd php-mysql mariadb-server libapache2-mod-php
 
 # Set up database
 DB_PASS="$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13)"
